@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="jquery.mobile-1.4.5.min.js"></script>
+  <link rel="stylesheet" href="Theme1.css"/>
+  <link rel="stylesheet" type="text/css" href="preregstandards.css">  
+</head>
+<body>
+
+
+
+<div data-role="page" id="page1" data-theme="a">
+
+  <div data-role="main" class="ui-content greenBack">
+     <h1> Welcome </h1>
+     <div id="loadingpage" class="logo"></div>
+      <br><br><br><br>
+      <div  id="loader"></div>
+      <div style="display:none" id="welcomeBtn">
+        <a href="#page2" data-transition="slide"  ><button class='ui-btn ui-corner-all'>Continue....</button></a>
+      </div>
+  </div>
+</div>
+
+<div data-role="page" id="page2" data-theme="a">
+  <div data-role="header" data-theme="a">
+  		<h1>Standards</h1>
+      <a href="#optMenu1" data-rel="popup" data-transition="slideup" class="ui-nodisc-icon ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-btn-right" data-theme="a"></a>
+      <div data-role="popup" id="optMenu1" data-theme="a" data-position-to="window">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a>
+          <ul data-role="listview" data-inset="true" style="min-width: 200px;">
+            <li data-role="list-divider">Menu</li>
+            <li><a href="#page1" data-transition="slide">Home</a></li>
+            <li><a href="#page2" data-transition="slide">Standards</a></li>
+            <li><a href="#page3" data-transition="slide">Record Evidence</a></li>
+            <li><a href="#page6" data-transition="slide"> About</a></li>
+          </ul>
+      </div> 
+  </div>
+  <div data-role="main" class="ui-content" data-theme="a">
+    <div class="greenBack">
+      <a href="#statsPopup" data-rel="popup"><button class="ui-btn"> View Stats </button></a>
+    </div>
+    <hr>
+  	<form class="ui-filterable">
+      <input id="standardsFilter" data-type="search" placeholder="Search...">
+    </form>
+    <div data-role="popup" id="statsPopup" class="ui-content">   
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a> 
+         <div id="chart">
+           <div id="progress"></div>
+         </div><hr>
+         <div>
+           <p> <h3 class="textCentre">Percentage of standards signed off </h3>
+              <div id="percComplete" class="textCentre"></div>
+           </p><hr>
+
+           <p> 
+            <h4> Number of Standards signed off </h4>
+            <p id="standards" class="textCentre"> </p>         
+            <hr>
+            <h4>Number of standards remaining</h4>
+            <p id="remainingStandards" class="textCentre"></p>
+         </div>
+    </div>
+
+
+
+    <ul data-role="listview"  data-filter="true" data-input="#standardsFilter" data-inset="true">
+
+      <li data-role="list-divider">A.1 Manage Self</li>
+
+      <li><a href="#pop1" data-rel="popup" id="s1" ><span class="wrap">A1.1 Behave in a manner consistent with membership of the profession</span></a></li>
+      <li><a href="#pop2" data-rel="popup" id="s2"><span class="wrap" >A1.2 Manage your time effectively</span></a></li>
+      <li><a href="#pop3" data-rel="popup" id="s3"><span class="wrap">A1.3 Recognise your personal and professional limitations and refer appropriately</span></a></li>
+
+
+      <li><a href="#pop4" data-rel="popup" id="s4"><span class="wrap">A1.4 Respond with willingness and flexibility to new situations and to change</span></a></li>
+      <li><a href="#pop5" data-rel="popup" id="s5"><span class="wrap">A1.5 Remain composed and personally effective in all situations</span></a></li>
+      <li><a href="#pop6" data-rel="popup" id="s6"><span class="wrap">A1.6 Make decisions which demonstrate clear and logical thought</span></a></li>
+      <li><a href="#pop7" data-rel="popup" id="s7"><span class="wrap">A1.7 Take responsibility for, and accept outcomes of, your own decisions</span></a></li>
+      <li><a href="#pop8" data-rel="popup" id="s8"><span class="wrap">A1.8 Amend your behaviour, when necessary, based on evaluation of your performance by yourself or others</span></a></li>
+
+      <li data-role="list-divider" id="s">A.2 Manage Work</li>
+      <li><a href="#pop9" data-rel="popup" id="s9"><span class="wrap">A2.1 Carry out tasks effectively</span></a></li>
+      <li><a href="#pop10" data-rel="popup" id="s10"><span class="wrap">A2.2 Approach tasks and situations in accordance with the law and with the GPhC standards for pharmacy professionals</span></a></li>
+      <li><a href="#pop11" data-rel="popup" id="s11"><span class="wrap">A2.3 Follow work systems correctly</span></a></li>
+      <li><a href="#pop12" data-rel="popup" id="s12"><span class="wrap">A2.4 Use resources effectively</span></a></li>
+
+      <li data-role="list-divider">A.3 Manage Problems</li>
+      <li><a href="#pop13" data-rel="popup" id="s13"><span class="wrap">A3.1 Recognise and define actual or potential problems</span></a></li>
+      <li><a href="#pop14" data-rel="popup" id="s14"><span class="wrap">A3.2 Identify workable options to resolve the problem</span></a></li>
+      <li><a href="#pop15" data-rel="popup" id="s15"><span class="wrap">A3.3 Select the best solution, based on sound analysis and appropriate evidence</span></a></li>
+      <li><a href="#pop16" data-rel="popup" id="s16"><span class="wrap">A3.4 Suggest and, if appropriate, implement solutions to problems</span></a></li>
+      <li><a href="#pop17" data-rel="popup" id="s17"><span class="wrap">A3.5 Evaluate the outcome of the solution after implementation, and if necessary re-define the problem. See section A3.1.</span></a></li>
+ 
+      <li data-role="list-divider"><span class="wrap">A.4 Demonstrate commitment to quality</span></li>
+      <li><a href="#pop18" data-rel="popup" id="s18"><span class="wrap">A4.1 Work to an acceptable standard when preparing products and delivering services</span></a></li>
+      <li><a href="#pop19" data-rel="popup" id="s19"><span class="wrap">A4.2 Check your own work effectively</span></a></li>
+      <li><a href="#pop20" data-rel="popup" id="s20"><span class="wrap">A4.3 Minimise error by others through effective supervision</span></a></li>
+      <li><a href="#pop21" data-rel="popup" id="s21"><span class="wrap">A4.4 Identify and rectify your own and others’ mistakes promptly and effectively</span></a></li>
+      <li><a href="#pop22" data-rel="popup" id="s22"><span class="wrap">A4.5 Minimise health and safety risks to yourself and others</span></a></li>
+      <li><a href="#pop23" data-rel="popup" id="s23"><span class="wrap">A4.6 Base your actions, advice and decisions on evidence</span></a></li>
+      <li><a href="#pop24" data-rel="popup" id="s24"><span class="wrap">A4.7 Obtain and process the evidence you need to meet A4.6</span></a></li>
+      <li><a href="#pop25" data-rel="popup" id="s25"><span class="wrap">A4.8 Have successfully engaged in a quality improvement process</span></a></li>
+
+       
+      <li data-role="list-divider"><span class="wrap">A.5 Demonstrate ongoing learning and development</span></li>
+      <li><a href="#pop26" data-rel="popup" id="s26"><span class="wrap">A5.1 Identify and prioritise your own learning and development needs, based on self-reflection/evaluation and on feedback from others</span></a></li>
+      <li><a href="#pop27" data-rel="popup" id="s27"><span class="wrap">A5.2 Develop your own plans to meet identified needs, using SMART learning objectives</span></a></li>
+      <li><a href="#pop28" data-rel="popup" id="s28"><span class="wrap">A5.3 Make full use of learning and development opportunities</span></a></li>
+      <li><a href="#pop29" data-rel="popup" id="s29"><span class="wrap">A5.4 Evaluate whether your learning objectives have been met</span></a></li>
+      <li><a href="#pop30" data-rel="popup" id="s30"><span class="wrap">A5.5 Identify your further learning needs</span></a></li>
+      <li><a href="#pop31" data-rel="popup" id="s31"><span class="wrap">A5.6 Record your own learning and development process and outcomes</span></a></li>
+      <li><a href="#pop32" data-rel="popup" id="s32"><span class="wrap">A5.7 Apply learning to practice</span></a></li>
+
+    </ul>
+
+    <ul data-role="listview" data-filter="true" data-input="#standardsFilter" data-inset="true">
+      <li data-role="list-divider">B1 Communicate effectively</li>
+      <li><a href="#pop33" data-rel="popup" id="s33"><span class="wrap" id="w1"> B1.1 Communicate effectively in English</span></a></li>
+      <li><a href="#pop34" data-rel="popup" id="s34"><span class="wrap"> B1.2 Behave in a polite and helpful manner</span></a></li>
+      <li><a href="#pop35" data-rel="popup" id="s35"><span class="wrap"> B1.3 Sensitively approach people who need or who may need assistance</span></a></li>
+      <li><a href="#pop36" data-rel="popup" id="s36"><span class="wrap"> B1.4 Elicit all relevant information by the use of appropriate questions</span></a></li>
+      <li><a href="#pop37" data-rel="popup" id="s37"><span class="wrap"> B1.5 Listen effectively to the whole message</span></a></li>
+      <li><a href="#pop38" data-rel="popup" id="s38"><span class="wrap"> B1.6 Respect and observe confidentiality</span></a></li>
+      <li><a href="#pop39" data-rel="popup" id="s39"><span class="wrap"> B1.7 Act appropriately in response to spoken and unspoken needs of others</span></a></li>
+      <li><a href="#pop40" data-rel="popup" id="s40"><span class="wrap"> B1.8 Behave in a manner which instills confidence</span></a></li>
+      <li><a href="#pop41" data-rel="popup" id="s41"><span class="wrap"> B1.9 Behave assertively</span></a></li>
+      <li><a href="#pop42" data-rel="popup" id="s42"><span class="wrap">B1.10 Use appropriate body language</span></a></li>
+      <li><a href="#pop43" data-rel="popup" id="s43"><span class="wrap">B1.11 Provide information and advice appropriate to the needs of the recipient(s)</span></a></li>
+      <li><a href="#pop44" data-rel="popup" id="s44"><span class="wrap">B1.12 Handle conflict appropriately</span></a></li>
+
+      <li data-role="list-divider">B2 Work effectively with others</li>
+      <li><a href="#pop45" data-rel="popup" id="s45"><span class="wrap">B2.1 Acknowledge the ideas and opinions of others and act on them when appropriate</span></a></li>
+      <li><a href="#pop46" data-rel="popup" id="s46"><span class="wrap">B2.2 Present your own ideas and opinions appropriately when speaking and in writing</span></a></li>
+      <li><a href="#pop47" data-rel="popup" id="s47"><span class="wrap">B2.3 Meet commitments made to others within agreed deadlines</span></a></li>
+      <li><a href="#pop48" data-rel="popup" id="s48"><span class="wrap">B2.4 Give constructive feedback to others based on accurate evaluation of their performance</span></a></li>
+      <li><a href="#pop49" data-rel="popup" id="s49"><span class="wrap">B2.5 Secure help from others when necessary in an appropriate manner</span></a></li>
+      <li><a href="#pop50" data-rel="popup" id="s50"><span class="wrap">B2.6 Assist others when necessary</span></a></li>
+      <li><a href="#pop51" data-rel="popup" id="s51"><span class="wrap">B2.7 Delegate tasks appropriately</span></a></li>
+      <li><a href="#pop52" data-rel="popup" id="s52"><span class="wrap"> B2.8 Supervise others in an appropriate manner to ensure that agreed outcomes are achieved</span></a></li>
+      <li><a href="#pop53" data-rel="popup" id="s53"><span class="wrap">B2.9 Use your knowledge and skills effectively when helping others learn</span></a></li>
+    </ul>
+
+    <ul data-role="listview" data-filter="true" data-input="#standardsFilter" data-inset="true">
+
+        <li data-role="list-divider">C1 Manage the dispensing process</li>
+        <li><a href="#pop54" data-rel="popup" id="s54"><span class="wrap"> C1.1 Correctly receive prescriptions into the pharmacy</span></a></li>
+        <li><a href="#pop55" data-rel="popup" id="s55"><span class="wrap"> C1.2 Check the prescription is valid</span></a></li>
+        <li><a href="#pop56" data-rel="popup" id="s56"><span class="wrap"> C1.3 Assess the prescription for safety and clinical appropriateness</span></a></li>
+        <li><a href="#pop57" data-rel="popup" id="s57"><span class="wrap"> C1.4 Resolve any identified problems appropriately</span></a></li>
+        <li><a href="#pop58" data-rel="popup" id="s58"><span class="wrap"> C1.5 Perform calculations correctly</span></a></li>
+        <li><a href="#pop59" data-rel="popup" id="s59"><span class="wrap"> C1.6 Assemble the prescription correctly</span></a></li>
+        <li><a href="#pop60" data-rel="popup" id="s60"><span class="wrap"> C1.7 Supply extemporaneously prepared products according to the correct formula</span></a></li>
+        <li><a href="#pop61" data-rel="popup" id="s61"><span class="wrap"> C1.8 Correctly issue dispensed item(s) to patient or representative, with appropriate information and advice</span></a></li>
+        <li><a href="#pop62" data-rel="popup" id="s62"><span class="wrap"> C1.9 Ensure stock is managed correctly</span></a></li>
+        <li><a href="#pop63" data-rel="popup" id="s63"><span class="wrap"> C1.10 Respond appropriately to requests to dispense prescription-only items without a prescription</span></a></li>
+        <li><a href="#pop64" data-rel="popup" id="s64"><span class="wrap"> C1.11 Correctly process necessary documentation</span></a></li>
+        <li><a href="#pop65" data-rel="popup" id="s65"><span class="wrap"> C1.12 Effectively check prescriptions dispensed by others</span></a></li>
+
+         <li data-role="list-divider"><span class="wrap">C2 Provide additional clinical and pharmaceutical services</span></li>
+        <li><a href="#pop66" data-rel="popup" id="s66"><span class="wrap">C2.1 Provide considered and correct answers to queries, founded on research-based evidence</span></a></li>
+        <li><a href="#pop67" data-rel="popup" id="s67"><span class="wrap">C2.2 Pro-actively assist patients to obtain maximum benefit from their treatment</span></a></li>
+        <li><a href="#pop68" data-rel="popup" id="s68"><span class="wrap">C2.3 Identify and take action to minimise risk to patients from their treatment</span></a></li>
+        <li><a href="#pop69" data-rel="popup" id="s69"><span class="wrap">C2.4 Actively provide information and advice to healthcare professionals</span></a></li>
+        <li><a href="#pop70" data-rel="popup" id="s70"><span class="wrap">C2.5 Construct medication histories using a range of sources</span></a></li>
+        <li><a href="#pop71" data-rel="popup" id="s71"><span class="wrap">C2.6 Use medication histories correctly</span></a></li>
+        <li><a href="#pop72" data-rel="popup" id="s72"><span class="wrap">C2.7 Recognise possible adverse drug reactions, evaluate risks and take action accordingly</span></a></li>
+        <li><a href="#pop73" data-rel="popup" id="s73"><span class="wrap">C2.8 Provide appropriate information and advice on the management of minor and common ailments</span></a></li>
+        <li><a href="#pop74" data-rel="popup" id="s74"><span class="wrap">C2.9 Effectively use opportunities to promote and support healthy lifestyles and prevent disease</span></a></li>
+        <li><a href="#pop75" data-rel="popup" id="s75"><span class="wrap">C2.10 Demonstrate awareness of emergency first aid</span></a></li>
+        <li><a href="#pop76" data-rel="popup" id="s76"><span class="wrap">C2.11 Refer, or direct the person, to a more suitable source of help or information, when necessary</span></a></li>
+    </ul>
+   
+      <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+              <ul>
+                <li><a href="#page2" data-icon="bullets">Standards</a></li>
+                <li><a href="#page3" data-icon="edit" class="ui-btn-active ui-state-persist">Record Evidence</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  
+  
+	  <div data-role="popup" id="pop1" class="ui-content">
+      <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+      <div id="p1">
+      </div>
+      <div></div>
+	  </div>
+
+    <div data-role="popup" id="pop2" class="ui-content">
+      <div id="p2"></div>
+        <div class="popContents">This will include time at work and using time outside work for personal and professional development. It will include prioritising tasks, planning, timekeeping and managing interruptions.
+        </div>
+    </div>
+
+    <div data-role="popup" id="pop3" class="ui-content">       
+      <div id="p3"></div>
+        <div class="popContents">In this context, ‘appropriately’ means referring when necessary, to the correct person, in a suitable way.
+        </div>
+    </div>
+    <div data-role="popup" id="pop4" class="ui-content">
+      <div id="p4"></div>
+    </div>
+    <div data-role="popup" id="pop5" class="ui-content">
+      <div id="p5"></div>
+      <div class="popContents">This may, in extreme circumstances, include removing yourself from a situation to maintain your self-control and to minimise risks to patients.
+      Situations will include challenging behaviour from colleagues or clients, periods of heavy workload and times of stress.
+      </div>
+    </div>
+    <div data-role="popup" id="pop6" class="ui-content">
+      <div id="p6"></div>
+    </div>
+    <div data-role="popup" id="pop7" class="ui-content">
+      <div id="p7"></div>
+    </div>
+    <div data-role="popup" id="pop8" class="ui-content">
+      <div id="p8"></div>
+    </div>
+ 
+    <div data-role="popup" id="pop9" class="ui-content">
+      <div id="p9"></div>
+        <div class="popContents">•  In this context ‘effectively’ means correctly, in an organised manner, with proper attention to detail and at a pace appropriate to the level of business. It includes prioritising and completing tasks within agreed deadlines.
+        </div>
+    </div>
+    <div data-role="popup" id="pop10" class="ui-content">
+      <div id="p10"></div>
+    </div>
+    <div data-role="popup" id="pop11" class="ui-content">
+      <div id="p11"></div>
+        <div class="popContents">Work systems include your own working practices, standard operating procedures, Sale of Medicines protocol, and your organisation’s systems and security procedures.
+        </div>
+    </div>
+    <div data-role="popup" id="pop12" class="ui-content">
+      <div id="p12"></div>
+      <div class="popContents">Resources include colleagues, other healthcare workers, workspace, equipment, material and both text-based and electronic references.
+      </div>
+    </div>
+
+    <div data-role="popup" id="pop13" class="ui-content">
+      <div id="p13"></div>
+      <div class="popContents">Problems include difficulties, minor and serious, needing resolution</div>
+    </div>
+    <div data-role="popup" id="pop14" class="ui-content">
+      <div id="p14"></div>
+      <div>
+       Sound analysis will include:
+       <ul>
+          <li>exploring the strengths and weaknesses of options</li>
+          <li> considering barriers to resolving the problem discussion with others</li> 
+      </ul>
+      </div>
+    </div>
+    <div data-role="popup" id="pop15" class="ui-content">
+      <div id="p15"></div>
+    </div>
+    <div data-role="popup" id="pop16" class="ui-content">
+      <div id="p16"></div>
+    </div>
+    <div data-role="popup" id="pop17" class="ui-content">
+      <div id="p17"></div>
+      <div class="popContents">As defined by GPhC standards for pharmacy professionals with a focus on providing safe and effective care.</div>
+    </div>
+
+    <div data-role="popup" id="pop18" class="ui-content">
+      <div id="p18"></div>
+    </div>
+    <div data-role="popup" id="pop19" class="ui-content">
+      <div id="p19"></div>
+    </div>
+    <div data-role="popup" id="pop20" class="ui-content">
+      <div id="p20"></div>
+    </div>
+    <div data-role="popup" id="pop21" class="ui-content">
+      <div id="p21"></div>
+    </div>
+    <div data-role="popup" id="pop22" class="ui-content">
+      <div id="p22"></div>
+    </div>
+    <div data-role="popup" id="pop23" class="ui-content">
+      <div id="p23"></div>
+      <div class="popContents">rather than assumption, anecdote or hearsay.</div>
+    </div>
+    <div data-role="popup" id="pop24" class="ui-content">
+      <div id="p24"></div>
+      <div class="popContents">by effectively gathering, reviewing, evaluating and applying research evidence.</div>
+    </div>
+    <div data-role="popup" id="pop25" class="ui-content">
+      <div id="p25"></div>
+      <div class="popContents">This could be achieved, for example, by carrying out a small audit assignment, or completing a PDSA cycle</div>
+     </div>
+    <div data-role="popup" id="pop26" class="ui-content">
+      <div id="p26"></div>
+    </div>
+    <div data-role="popup" id="pop27" class="ui-content">
+      <div id="p27"></div>
+      <div>
+        Plans should include a variety of learning activities, such as:
+        <ul>
+          <li>using reference sources</li>
+          <li>undertaking distance or IT learning packages</li>
+          <li>work shadowing (observation of others at work)</li>
+          <li>discussion with tutor or colleagues in and outside the pharmacy</li>
+          <li>attending local practice forum meetings</li>
+          <li>giving talks/presentations</li>
+          <li>attending events e.g. courses, seminars, conferences, British Pharmaceutical Students' Association (BPSA)</li>
+        </ul>
+
+      </div>
+    </div>
+    <div data-role="popup" id="pop28" class="ui-content">
+      <div id="p28"></div>
+      <div class="popContents">opportunities will arise from the activities listed in A5.2 and from daily activities (for example, dealing with new tasks and situations, handling problems).
+      </div>
+    </div>
+    <div data-role="popup" id="pop29" class="ui-content">
+      <div id="p29"></div>
+    </div>
+    <div data-role="popup" id="pop30" class="ui-content">
+      <div id="p30"></div>
+    </div>
+    <div data-role="popup" id="pop31" class="ui-content">
+      <div id="p31"></div>
+    </div>
+    <div data-role="popup" id="pop32" class="ui-content">
+      <div id="p32"></div>
+    </div>
+    <div data-role="popup" id="pop33" class="ui-content">
+      <div id="p33"></div>
+      <div class="popContents">‘Effectively’ here means that you are competent enough in English to understand and be understood in writing, on the phone and in person.</div>
+    </div>
+    <div data-role="popup" id="pop34" class="ui-content">
+      <div id="p34"></div>
+    </div>
+    <div data-role="popup" id="pop35" class="ui-content">
+      <div id="p35"></div>
+    </div>
+    <div data-role="popup" id="pop36" class="ui-content">
+      <div id="p36"></div>
+    </div>
+    <div data-role="popup" id="pop37" class="ui-content">
+      <div id="p37"></div>
+      <div id="popContents">this includes the spoken word, body language and tone of voice</div>
+    </div>
+    <div data-role="popup" id="pop38" class="ui-content">
+      <div id="p38"></div>
+    </div>
+    <div data-role="popup" id="pop39" class="ui-content">
+      <div id="p39"></div>
+      <div class="popContents">‘Others’ will include people with special needs and people from different backgrounds and with different lifestyles.</div>
+    </div>
+    <div data-role="popup" id="pop40" class="ui-content">
+      <div id="p40"></div>
+    </div>
+    <div data-role="popup" id="pop41" class="ui-content">
+      <div id="p41"></div>
+    </div>
+    <div data-role="popup" id="pop42" class="ui-content">
+      <div id="p42"></div>
+    </div>
+    <div data-role="popup" id="pop43" class="ui-content">
+      <div id="p43"></div>
+      <div class="popContents">‘Recipients’ must include individuals, groups and people with particular needs, for example people with diabetes, asthma and so on.
+      </div>
+    </div>
+    <div data-role="popup" id="pop44" class="ui-content">
+      <div id="p44"></div>
+      <div class="popContents">this will include taking action to prevent conflict wherever possible. Evidence must cover conflict arising from complaints, aggressive behaviour and from disagreements with or among colleagues.
+      </div>
+    </div>
+    <div data-role="popup" id="pop45" class="ui-content">
+      <div id="p45"></div>
+      <div class="popContents">‘Others’ must include junior and senior colleagues and external contacts.</div>
+    </div>
+    <div data-role="popup" id="pop46" class="ui-content">
+      <div id="p46"></div>
+    </div>
+    <div data-role="popup" id="pop47" class="ui-content">
+      <div id="p47"></div>
+      <div class="contents">This will include giving a clear explanation if you cannot meet a commitment.</div>
+    </div>
+    <div data-role="popup" id="pop48" class="ui-content">
+      <div id="p48"></div>
+      <div class="popContents">This must include both positive and negative feedback.</div>
+    </div>
+    <div data-role="popup" id="pop49" class="ui-content">
+      <div id="p49"></div>
+    </div>
+    <div data-role="popup" id="pop50" class="ui-content">
+      <div id="p50"></div>
+    </div>
+    <div data-role="popup" id="pop51" class="ui-content">
+      <div id="p51"></div>
+      <div class="popContents">when necessary and in a manner that supports team working.</div>
+    </div>
+    <div data-role="popup" id="pop52" class="ui-content">
+      <div id="p52"></div>
+    </div>
+    <div data-role="popup" id="pop53" class="ui-content">
+      <div id="p53"></div>
+    </div>
+    <div data-role="popup" id="pop54" class="ui-content">
+      <div id="p54"></div>
+      <div class="popContents">‘Correctly’ includes following protocols, correct charging and exemption procedures, and providing necessary information.</div>
+    </div>
+    <div data-role="popup" id="pop55" class="ui-content">
+      <div id="p55"></div>
+      <div class="popContents">‘Valid’ means legible, accurate, complete, following legal requirements, not fraudulent.</div>
+    </div>
+    <div data-role="popup" id="pop56" class="ui-content">
+      <div id="p56"></div>
+      <div> This will Include:
+          <ul>
+            <li>appropriateness according to patient's condition, if known</li>
+            <li>meeting the patient's need with view to minimising waste dosage within therapeutic range</li>
+            <li>appropriate dosage form</li>
+            <li>appropriate route of administration</li>
+            <li>appropriateness according to patient's parameters (age, weight, etc) and previous medication</li>
+            <li>compatibility with other medication, if known</li>
+            <li>consistency with formularies, clinical guidelines and protocols, if known</li>
+            <li>possible side effects</li>
+            <li>risk of adverse drug reactions</li>
+            <li>potential for non-compliance, inappropriate use or misuse by patient</li>
+            <li>any other contra-indications</li>
+          </ul>
+</div>
+    </div>
+    <div data-role="popup" id="pop57" class="ui-content">
+      <div id="p57"></div>
+      <div class="popContents">This will include any problems arising from C1.2, C1.3 or from stock availability.</div>
+    </div>
+    <div data-role="popup" id="pop58" class="ui-content">
+      <div id="p58"></div>
+      <div>
+        Calculations must include all the following:
+          <ul>
+            <li>formulations for creams and ointments</li>
+            <li>complex solutions and suspensions</li>
+            <li>IV formulations including cytotoxics</li>
+            <li>parenteral nutrition and infusions</li>
+            <li>doses and dosing schedules</li>
+            <li>dose adjustment in paediatrics and in particular conditions such as renal failure</li>
+            <li>IV dosing quantity to supply</li>
+            <li>loading dose/steady state calculations</li>
+            <li>calculations for syringe pumps and drivers, infusion pumps and nutrition pumps</li>
+          </ul>
+      </div>
+    </div>
+    <div data-role="popup" id="pop59" class="ui-content">
+      <div id="p59"></div>
+      <div class="popContents">This includes packaging and producing computer-generated labels.</div>
+    </div>
+    <div data-role="popup" id="pop60" class="ui-content">
+      <div id="p60"></div>
+      <div class="popContents">both by preparing and by ordering from a specialist manufacturing unit.
+      </div>
+    </div>
+    <div data-role="popup" id="pop61" class="ui-content">
+      <div id="p61"></div>
+    </div>
+    <div data-role="popup" id="pop62" class="ui-content">
+      <div id="p62"></div>
+      <div class="popContents">This will include ordering, checking on delivery and dealing with discrepancies, stock rotation, dealing with recalls and returned items, storage and disposal.</div>
+    </div>
+    <div data-role="popup" id="pop63" class="ui-content">
+      <div id="p63"></div>
+      <div class="popContents">Requests from patients or their representatives and from prescribers.
+          By law, a pharmacist must have interviewed the patient and made the decision to supply. To meet this standard you should, with the patient's consent, listen to the interview, dispense the product and make the entry in the register (with checking by the pharmacist).
+      </div>
+    </div>
+    <div data-role="popup" id="pop64" class="ui-content">
+      <div id="p64"></div>
+      <div class="popContents">this includes endorsing in hospital and the community, filing, stock control and completing PMRs, CD records and the prescription register.
+      </div>
+    </div>
+    <div data-role="popup" id="pop65" class="ui-content">
+      <div id="p65"></div>
+      <div>
+        Required outcomes from the GPhC standards for initial education and training of pharmacists state that a pre-registration trainee must:
+        <ul>
+          <li>analyse prescriptions for validity and clarity</li>
+          <li>clinically evaluate the appropriateness of prescribed medicines</li>
+          <li>provide, monitor, and modify prescribed treatment to maximise health outcomes</li>
+          <li>know how to demonstrate how the science of pharmacy is applied in the design and development of medicines and devices</li>
+          <li>record, maintain and store patient data</li>
+          <li>show how to develop quality management systems, including maintaining appropriate records</li>
+          <li>manage and maintain quality management systems, including maintaining appropriate records</li>
+          <li>supply medicines safely and efficiently, consistently within legal requirements and best professional practice. NB - this should be demonstrated in relation to both human and veterinary medicines</li>
+          <li>show how to ensure the quality of ingredients to produce medicines and products</li>
+          <li>show how to apply pharmaceutical principles to the formulation, preparation and packaging of products</li>
+          <li>use pharmaceutical calculations to verify the safety of doses and administration rates</li>
+          <li>procure and store medicines and other pharmaceutical products working within a quality assurance framework</li>
+          <li>distribute medicines safely, legally and effectively</li>
+          <li>dispose of medicines safely, legally and effectively</li>
+          <li>know how to procure, store and dispense and supply veterinary medicines safely and legally</li>
+        </ul>    
+      </div>
+    </div>
+    <div data-role="popup" id="pop66" class="ui-content">
+      <div id="p66"></div>
+      <div class="popContents">Evidence sources will include clinical textbooks, journals and pharmaceutical company information (paper based or electronic).</div>
+    </div>
+    <div data-role="popup" id="pop67" class="ui-content">     
+      <div id="p67"></div>
+      <div class="popContents"> This will include identifying opportunities to help, providing information, positive reinforcement, reassurance, testing understanding, and encouraging the recipient to ask questions. Directly or through their representatives.
+      </div>
+    </div>
+    <div data-role="popup" id="pop68" class="ui-content">
+      <div id="p68"></div>
+    </div>
+    <div data-role="popup" id="pop69" class="ui-content"> 
+      <div id="p69"></div>
+    </div>
+    <div data-role="popup" id="pop70" class="ui-content">  
+      <div id="p70"></div>
+      <div class="popContents">These must include basic and comprehensive histories.</div>
+    </div>
+    <div data-role="popup" id="pop71" class="ui-content">
+      <div id="p71"></div>
+      <div class="popContents">Access existing information, record new information and apply the information.</div>
+    </div>
+    <div data-role="popup" id="pop72" class="ui-content">
+      <div id="p72"></div>
+      <div class="popContents">This may include advising and informing the patient or their representative, discussions with colleagues and reporting in line with local and national protocols.
+      </div>
+    </div>
+    <div data-role="popup" id="pop73" class="ui-content">
+    <div id="p73"></div>        
+    <div class="popContents">Information and advice must include both appropriate self-medication and appropriate non-drug actions.
+    </div>
+    </div>
+    <div data-role="popup" id="pop74" class="ui-content">  
+    <div id="p74"></div>      
+    <div class="popContents"> with individual patients and at formal events such as presentations to patient or public groups.</div>
+    </div>
+    <div data-role="popup" id="pop75" class="ui-content">   
+    <div id="p75"></div>     
+      <div class="popContents"> by successfully completing a training course from a recognised provider such as St John Ambulance - there is special guidance on first aid below. 
+      </div>
+    </div>
+    <div data-role="popup" id="pop76" class="ui-content">
+      <div id="p76"></div>
+      <div class="popContents">For example: support groups, GP, hospital A&E department
+      </div>
+    </div>
+    
+    <div data-role="footer" data-position="fixed">
+     	<div data-role="navbar">
+		      <ul>
+		        <li><a href="#page2" data-icon="bullets" class="ui-btn-active ui-state-persist">Standards</a></li>
+		        <li><a href="#page3" data-icon="edit">Record Evidence</a></li>
+		      </ul>
+   		</div>
+    </div>
+</div> 
+
+
+<div data-role="page" id="page3" data-theme="a">
+
+  <div data-role="header" data-theme="a" >
+    <h1> Evidence </h1>
+    <a href="#optMenu2" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-btn-right"></a>
+      <div data-role="popup" id="optMenu2" data-theme="a" data-position-to="window">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <ul data-role="listview" data-inset="true" style="min-width: 200px;">
+            <li data-role="list-divider">Menu</li>
+            <li><a href="#page1" data-transition="slide">Home</a></li>
+            <li><a href="#page2" data-transition="slide" >Standards</a></li>
+            <li><a href="#page3" data-transition="slide" >Record Evidence</a></li>
+            <li><a href="#page6" data-transition="slide"> About</a></li>
+          </ul>
+          </ul>
+      </div> 
+  </div>
+
+  <div data-role="main" class="ui-content">
+
+    <div  data-form="ui-body" class="ui-body ui-body-a ui-corner-all">
+      Use this section to record the details of any ideas for evidence you have come across.
+    </div>
+    <div class="lineBreak"></div>
+
+    <h2 class="textCentre">Note Entry</h2>
+		<input type="text" id="task" placeholder='Note Description'>
+    <textarea cols="40" rows="10" name="textarea" id="description" placeholder="Details"></textarea>
+    <input type="date" id="dateEntry"  dateFormat="dd-mm-yy">
+
+    <a href="#panel2" class="ui-btn">Click to add standards</a>
+    <div class="ui-body ui-body-a ui-corner-all" id="standardsmetDisp" style="display:none";></div>
+
+    <a href="#"  id="add" data-role="button" data-inline="true" data-theme="b">Save Record </a>
+    <a href="#" data-role="button" data-inline="true" data-theme="b" onclick="reload()">Reset Entry</a>
+    <div class="lineBreak"></div>
+    <h2 class="textCentre">Saved Entries</h2>
+		<ul id='todos'></ul>
+    <a href="#page7" class="ui-btn">View All Saved Records</a>
+  </div>
+
+  <div data-role="panel" id="panel2" data-position="right" data-display="push">
+  
+  <a href="#" data-rel="close" data-role="button" data-inline="true" data-theme="b" onclick="stringStandards();showStandards()">Save</a>
+  <a href="#" data-rel="close" data-role="button" data-inline="true" >Cancel</a>
+  <br>
+  <hr>
+    <ul data-role="listview">
+      <li data-role="list-divider">A.1 Manage Self</li>
+      <label for="c1">A1.1 Behave in a manner consistent with membership of the profession</label>
+      <li><input type="checkbox"  value="A1.1" id="c1"></li>
+      <label for="c2">A1.2 Manage your time effectively</label>
+      <li><input type="checkbox"  value="A1.2" id="c2"></li>
+      <label for="c3">A1.3 Recognise your personal and professional limitations and refer appropriately</label>
+      <li><input type="checkbox"  value="A1.3" id="c3"></li>
+      <label for="c4">A1.4 Respond with willingness and flexibility to new situations and to change</label>
+      <li><input type="checkbox"  value="A1.4" id="c4"></li>
+      <label for="c5">A1.5 Remain composed and personally effective in all situations</label>
+      <li><input type="checkbox"  value="A1.5" id="c5"></li>
+      <label for="c6">A1.6 Make decisions which demonstrate clear and logical thought</label>
+      <li><input type="checkbox"  value="A1.6" id="c6"></li>
+      <label for="c7">A1.7 Take responsibility for, and accept outcomes of, your own decisions</label>
+      <li><input type="checkbox"  value="A1.7" id="c7"></li>
+      <label for="c8">A1.8 Amend your behaviour, when necessary, based on evaluation of your performance by yourself or others</label>
+      <li><input type="checkbox"  value="A1.8" id="c8"></li>
+
+      <li data-role="list-divider">A.2 Manage Work</li>
+      <label for="c9">A2.1 Carry out tasks effectively</label>
+      <li><input type="checkbox"  value="A2.1" id="c9"></li>
+      <label for="c10">A2.2 Approach tasks and situations in accordance with the law and with the GPhC standards for pharmacy professionals</label>
+      <li><input type="checkbox"  value="A2.2" id="c10"></li>
+      <label for="c11">A2.3 Follow work systems correctly</label>
+      <li><input type="checkbox"  value="A2.3" id="c11"></li>
+      <label for="c12">A2.4 Use resources effectively</label>
+      <li><input type="checkbox"  value="A2.4" id="c12"></li>
+
+      <li data-role="list-divider">A.3 Manage Problems</li>
+      <label for="c13">A3.1 Recognise and define actual or potential problems</label>
+      <li><input type="checkbox"  value="A3.1" id="c13"></li>
+      <label for="c14">A3.2 Identify workable options to resolve the problem</label>
+      <li><input type="checkbox"  value="A3.2" id="c14"></li>
+      <label for="c15">A3.3 Select the best solution, based on sound analysis and appropriate evidence</label>
+      <li><input type="checkbox"  value="A3.3" id="c15"></li>
+      <label for="c16">A3.4 Suggest and, if appropriate, implement solutions to problems</label>
+      <li><input type="checkbox"  value="A3.4" id="c16"></li>
+      <label for="c17">A3.5 Evaluate the outcome of the solution after implementation, and if necessary re-define the problem</label>
+      <li><input type="checkbox"  value="A3.5" id="c17"></li>
+ 
+      <li data-role="list-divider">A.4 Demonstrate commitment to quality</li>
+      <label for="c18">A4.1 Work to an acceptable standard when preparing products and delivering services</label>
+      <li><input type="checkbox"  value="A4.1" id="c18"></li>
+      <label for="c19">A4.2 Check your own work effectively</label>
+      <li><input type="checkbox"  value="A4.2" id="c19"></li>
+      <label for="c20">A4.3 Minimise error by others through effective supervision</label>
+      <li><input type="checkbox"  value="A4.3" id="c20"></li>
+      <label for="c21">A4.4 Identify and rectify your own and others’ mistakes promptly and effectively</label>
+      <li><input type="checkbox"  value="A4.4" id="c21"></li>
+      <label for="c22">A4.5 Minimise health and safety risks to yourself and others</label>
+      <li><input type="checkbox"  value="A4.5" id="c22"></li>
+      <label for="c23">A4.6 Base your actions, advice and decisions on evidence</label>
+      <li><input type="checkbox"  value="A4.6" id="c23"></li>
+      <label for="c24">A4.7 Obtain and process the evidence you need to meet A4.6</label>
+      <li><input type="checkbox"  value="A4.7" id="c24"></li>
+      <label for="c25">A4.8 Have successfully engaged in a quality improvement process</label>
+      <li><input type="checkbox"  value="A4.8" id="c25"></li>
+
+       
+      <li data-role="list-divider">A.5 Demonstrate ongoing learning and development</li>
+      <label for="c26">A5.1 Identify and prioritise your own learning and development needs, based on self-reflection/evaluation and on feedback from others</label>
+      <li><input type="checkbox"  value="A5.1" id="c26"></li>
+      <label for="c27">A5.2 Develop your own plans to meet identified needs, using SMART learning objectives</label>
+      <li><input type="checkbox"  value="A5.2" id="c27"></li>
+      <label for="c28">A5.3 Make full use of learning and development opportunities</label>
+      <li><input type="checkbox"  value="A5.3" id="c28"></li>
+      <label for="c29">A5.4 Evaluate whether your learning objectives have been met</label>
+      <li><input type="checkbox"  value="A5.4" id="c29"></li>
+      <label for="c30">A5.5 Identify your further learning needs</label>
+      <li><input type="checkbox"  value="A5.5" id="c30"></li>
+      <label for="c31">A5.6 Record your own learning and development process and outcomes</label>
+      <li><input type="checkbox"  value="A5.6" id="c31"></li>
+      <label for="c32">A5.7 Apply learning to practice</label>
+      <li><input type="checkbox"  value="A5.7" id="c32"></li>
+
+    </ul>
+
+    <ul data-role="listview">
+      <li data-role="list-divider">B1 Communicate effectively</li>
+      <label for="c33">B1.1 Communicate effectively in English</label>
+      <li><input type="checkbox"  value="B1.1" id="c33"></li>
+      <label for="c34">B1.2 Behave in a polite and helpful manner</label>
+      <li><input type="checkbox"  value="B1.2" id="c34"></li>
+      <label for="c35">B1.3 Sensitively approach people who need or who may need assistance</label>
+      <li><input type="checkbox"  value="B1.3" id="c35"></li>
+      <label for="c36">B1.4 Elicit all relevant information by the use of appropriate questions</label>
+      <li><input type="checkbox"  value="B1.4" id="c36"></li>
+      <label for="c37">B1.5 Listen effectively to the whole message</label>
+      <li><input type="checkbox"  value="B1.5" id="c37"></li>
+      <label for="c38">B1.6 Respect and observe confidentiality</label>
+      <li><input type="checkbox"  value="B1.6" id="c38"></li>
+      <label for="c39">B1.7 Act appropriately in response to spoken and unspoken needs of others</label>
+      <li><input type="checkbox"  value="B1.7" id="c39"></li>
+      <label for="c40">B1.8 Behave in a manner which instills confidence</label>
+      <li><input type="checkbox"  value="B1.8" id="c40"></li>
+      <label for="c41"> B1.9 Behave assertively</label>
+      <li><input type="checkbox"  value="B1.9" id="c41"></li>
+      <label for="c42">B1.10 Use appropriate body language</label>
+      <li><input type="checkbox"  value="B1.10" id="c42"></li>
+      <label for="c43">B1.11 Provide information and advice appropriate to the needs of the recipient(s)</label>
+      <li><input type="checkbox"  value="B1.11" id="c43"></li>
+      <label for="c44">B1.12 Handle conflict appropriately</label>
+      <li><input type="checkbox"  value="B1.12" id="c44"></li>
+
+      <li data-role="list-divider">B2 Work effectively with others</li>
+      <label for="c45">B2.1 Acknowledge the ideas and opinions of others* and act on them when appropriate</label>
+      <li><input type="checkbox"  value="B2.1" id="c45"></li>
+      <label for="c46">B2.2 Present your own ideas and opinions appropriately when speaking and in writing</label>
+      <li><input type="checkbox"  value="B2.2" id="c46"></li>
+      <label for="c47">B2.3 Meet commitments* made to others within agreed deadlines</label>
+      <li><input type="checkbox"  value="B2.3" id="c47"></li>
+      <label for="c48">B2.4 Give constructive feedback to others based on accurate evaluation of their performance</label>
+      <li><input type="checkbox"  value="B2.4" id="c48"></li>
+      <label for="c49">B2.5 Secure help from others when necessary in an appropriate manner</label>
+      <li><input type="checkbox"  value="B2.5" id="c49"></li>
+      <label for="c50">B2.6 Assist others when necessary</label>
+      <li><input type="checkbox"  value="B2.6" id="c50"></li>
+      <label for="c51">B2.7 Delegate tasks appropriately</label>
+      <li><input type="checkbox"  value="B2.7" id="c51"></li>
+      <label for="c52">B2.8 Supervise others in an appropriate manner to ensure that agreed outcomes are achieved</label>
+      <li><input type="checkbox"  value="B2.8" id="c52"></li>
+      <label for="c53">B2.9 Use your knowledge and skills effectively when helping others learn</label>
+      <li><input type="checkbox"  value="B2.9" id="c53"></li>
+    </ul>
+
+    <ul data-role="listview">
+
+        <li data-role="list-divider">C1 Manage the dispensing process</li>
+        <label for="c54">C1.1 Correctly receive prescriptions into the pharmacy</label>
+        <li><input type="checkbox"  value="C1.1" id="c54"></li>
+        <label for="c55">C1.2 Check the prescription is valid</label>
+        <li><input type="checkbox"  value="C1.2" id="c55"></li>
+        <label for="c56">C1.3 Assess the prescription for safety and clinical appropriateness</label>
+        <li><input type="checkbox"  value="C1.3" id="c56"></li>
+        <label for="c57">C1.4 Resolve any identified problems appropriately</label>
+        <li><input type="checkbox"  value="C1.4" id="c57"></li>
+        <label for="c58">C1.5 Perform calculations correctly</label>
+        <li><input type="checkbox"  value="C1.5" id="c58"></li>
+        <label for="c59">C1.6 Assemble the prescription correctly</label>
+        <li><input type="checkbox"  value="C1.6" id="c59"></li>
+        <label for="c60">C1.7 Supply extemporaneously prepared products according to the correct formula</label>
+        <li><input type="checkbox"  value="C1.7" id="c60"></li>
+        <label for="c61">C1.8 Correctly issue dispensed item(s) to patient or representative, with appropriate information and advice</label>
+        <li><input type="checkbox"  value="C1.8" id="c61"></li>
+        <label for="c62">C1.9 Ensure stock is managed correctly</label>
+        <li><input type="checkbox"  value="C1.9" id="c62"></li>
+        <label for="c63">C1.10 Respond appropriately to requests to dispense prescription-only items without a prescription</label>
+        <li><input type="checkbox"  value="C1.10" id="c63"></li>
+        <label for="c64">C1.11 Correctly process necessary documentation</label>
+        <li><input type="checkbox"  value="C1.11" id="c64"></li>
+        <label for="c65">C1.12 Effectively check prescriptions dispensed by others</label>
+        <li><input type="checkbox"  value="C1.12" id="c65"></li>
+
+        <li data-role="list-divider">C2 Provide additional clinical and pharmaceutical services</li>
+        <label for="c66">C2.1 Provide considered and correct answers to queries, founded on research-based evidence</label>
+        <li><input type="checkbox"  value="C2.1" id="c66"></li>
+        <label for="c67">C2.2 Pro-actively assist patients to obtain maximum benefit from their treatment</label>
+        <li><input type="checkbox"  value="C2.2" id="c67"></li>
+        <label for="c68">C2.3 Identify and take action to minimise risk to patients from their treatment</label>
+        <li><input type="checkbox"  value="C2.3" id="c68"></li>
+        <label for="c69">C2.4 Actively provide information and advice to healthcare professionals</label>
+        <li><input type="checkbox"  value="C2.4" id="c69"></li>
+        <label for="c70">C2.5 Construct medication histories using a range of sources</label>
+        <li><input type="checkbox"  value="C2.5" id="c70"></li>
+        <label for="c71">C2.6 Use medication histories correctly</label>
+        <li><input type="checkbox"  value="C2.6" id="c71"></li>
+        <label for="c72">C2.7 Recognise possible adverse drug reactions, evaluate risks and take action accordingly</label>
+        <li><input type="checkbox"  value="C2.7" id="c72"></li>
+        <label for="c73">C2.8 Provide appropriate information and advice on the management of minor and common ailments</label>
+        <li><input type="checkbox"  value="C2.8" id="c73"></li>
+        <label for="c74">C2.9 Effectively use opportunities to promote and support healthy lifestyles and prevent disease</label>
+        <li><input type="checkbox"  value="C2.9" id="c74"></li>
+        <label for="c75">C2.10 Demonstrate awareness of emergency first aid</label>
+        <li><input type="checkbox"  value="C2.10" id="c75"></li>
+        <label for="c76">C2.11 Refer, or direct the person, to a more suitable source of help or information, when necessary</label>
+        <li><input type="checkbox"  value="C2.11" id="c76"></li>
+    </ul>
+</div>
+
+  <div data-role="footer" data-position="fixed">
+    <div data-role="navbar">
+		      <ul>
+		        <li><a href="#page2" data-icon="bullets">Standards</a></li>
+		        <li><a href="#page3" data-icon="edit" class="ui-btn-active ui-state-persist">Record Evidence</a></li>
+		      </ul>
+   		</div>
+  </div>
+</div>
+
+
+
+
+
+
+<div data-role="page" id="page4" data-theme="a">
+
+  <div data-role="header">
+   <a href="#page3" data-transition="slide" data-direction="reverse" class="ui-btn ui-icon-back ui-btn-icon-left ui-corner-all">Back</a>
+    <h1> Evidence Note </h1>
+    <a href="#optMenu3" data-rel="popup" data-theme="a" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-btn-right"></a>
+      <div data-role="popup" id="optMenu3" data-theme="a" data-position-to="window">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <ul data-role="listview" data-inset="true" style="width: 200px;">
+            <li data-role="list-divider">Menu</li>
+            <li><a href="#page2" data-transition="slide" >Standards</a></li>
+            <li><a href="#page3" data-transition="slide" >Record Evidence</a></li>
+            <li><a href="#page6" data-transition="slide"> About</a></li>
+          </ul>
+          </ul>
+      </div> 
+  </div>
+
+  <div data-role="main" class="ui-content wordWrap">
+    <h2 id="titleDisp"></h2>
+    <p id="dateDisp"></p>
+    <p id="descDisp"></p>
+    <p id="standardsDisplay"></p>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+  </div>
+</div>
+
+
+
+<div data-role="page" id="page6" data-theme="a">
+
+  <div data-role="header" data-theme="a">
+    <h1> About</h1>
+    <a href="#optMenu5" data-theme="a" data-rel="popup" data-transition="slideup" class="ui-btn ui-shadow ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-btn-right"></a>
+      <div data-role="popup" id="optMenu5" data-theme="a" data-position-to="window">
+        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+          <ul data-role="listview" data-inset="true" style="min-width: 200px;">
+            <li data-role="list-divider">Menu</li>
+            <li><a href="#page1" data-transition="slide">Home</a></li>
+            <li><a href="#page2" data-transition="slide" >Standards</a></li>
+            <li><a href="#page3" data-transition="slide" >Record Evidence</a></li>
+            <li><a href="#page6" data-transition="slide"> About</a></li>
+          </ul>
+
+          </ul>
+      </div> 
+  </div>
+
+  <div data-role="main" class="ui-content">
+      <div class="logo"></div>
+      <h3 style="text-align: center;">Version 1.0</h3>
+
+      This app was designed by pharmacists to help pre-registration students get the most out of their pre-registration training.
+      The standards are taken from the pre-reg manual and were accurate at the time of publishing. This app is not intended to replace official guidance.
+
+      <address>
+        <a href="mailto:clinicalpharmacytraining@gmail.com">
+          <h5>Contact: clinicalpharmacytraining@gmail.com</h5>
+        </a>  
+      </address>
+      <button onclick="clearData()">Delete all data</button>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+  </div>
+</div>
+
+<div data-role="page" id="page7" data-theme="a">
+
+  <div data-role="header">
+  	<a href="#page3" data-theme="a" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-arrow-l">Back</a>
+    <h1>View all records</h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <div id="allContainer"></div>
+  </div>
+
+  <div data-role="footer" data-position="fixed">
+  </div>
+</div>
+
+<script src="preregstandards.js"></script>
+</script>
+</body>
+
+</html>
